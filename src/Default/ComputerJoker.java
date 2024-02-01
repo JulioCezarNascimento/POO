@@ -3,19 +3,28 @@ package Default;
 public class ComputerJoker {
 
         public static void main(String[] args) {
-            //abrindo MSN Messenger
-            MSNMenssenger msn = new MSNMenssenger();
-            msn.enviarMensagem();
-            msn.receberMensagem();
 
-            FacebookMensseger facebook = new FacebookMensseger();
-            facebook.enviarMensagem();
-            facebook.receberMensagem();
+            ServicoMensagemInstantanea smi = null;
 
-            Telegram telegram = new Telegram();
-            telegram.enviarMensagem();
-            telegram.receberMensagem();
+		/*
+		    NÃO SE SABE QUAL APP
+		    MAS QUALQUER UM DEVERÁ ENVIAR E RECEBER MENSAGEM
+		 */
+                    String appEscolhido="???";
+
+                    if(appEscolhido.equals("msn"))
+                        smi = new MSNMenssenger();
+                    else if(appEscolhido.equals("fbm"))
+                        smi = new FacebookMensseger();
+                    else if(appEscolhido.equals("tlg"))
+                        smi = new Telegram();
+
+
+                    smi.enviarMensagem();
+                    smi.receberMensagem();
+                }
         }
-    }
+
+
 
 
